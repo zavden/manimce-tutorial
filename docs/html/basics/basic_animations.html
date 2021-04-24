@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Basic animations &mdash; ManimCE tutorial by TB  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Positions" href="positions.html" />
+    <link rel="prev" title="Basic CLI options" href="cli_options.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ManimCE tutorial by TB
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initial_steps.html">Initial settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_options.html">Basic CLI options</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic animations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mobjects">Mobjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scene-add"><code class="docutils literal notranslate"><span class="pre">Scene.add</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types-of-animations">Types of animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scene-play"><code class="docutils literal notranslate"><span class="pre">Scene.play</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#class-animations">Class animations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#types">Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-animations-at-the-same-using-scene-play">Multiple animations at the same using Scene.play</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animations-with-arguments">Animations with arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-animations">More animations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#where-to-see-all-the-predefined-animations">Where to see all the predefined animations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scene-remove"><code class="docutils literal notranslate"><span class="pre">Scene.remove</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="positions.html">Positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_properties.html">Basic properties (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_assets.html">Import assets (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="groups_and_vgroups.html">Group &amp; VGroup (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tex_and_texts.html">Tex, MathTex &amp; Text (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs_2d.html">2D Graphs (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs_3d.html">3D Graphs (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/basic_updaters.html">Basic updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/alpha_updaters.html">alpha updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/animate_methods.html">Methods as animations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/dt_updaters.html">dt updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/group_animations.html">AnimationGroup, LaggedStart &amp; Successions (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom_mobjects.html">Custom Mobjects (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom_animations.html">Custon animations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/moving_camera_scene.html">Moving Camera Scene (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/zoomed_camera_scene.html">Zoomed Camera Scene (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ManimCE tutorial by TB</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Basic animations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/basics/basic_animations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-animations">
+<h1>Basic animations<a class="headerlink" href="#basic-animations" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="underbold">Source code of this section</span>: <a class="reference external" href="https://github.com/Elteoremadebeethoven/ManimCE-tutorial/blob/main/_02_basic_animations.py">_02_basic_animations.py</a></p>
+</div>
+<hr/><div class="section" id="mobjects">
+<h2>Mobjects<a class="headerlink" href="#mobjects" title="Permalink to this headline">¶</a></h2>
+<p>All objects that can be displayed on the screen inherit from the <code class="docutils literal notranslate"><span class="pre">Mobject</span></code> class, there are several types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImageMobject</span></code>: Raster images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VMobjects</span></code>: Bezier curves, all predefined geometric shapes inherit from <code class="docutils literal notranslate"><span class="pre">VMobject</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SVGMobject</span></code>: SVG file, inherits from <code class="docutils literal notranslate"><span class="pre">VMobject</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Group</span></code>: Mobjects grouping.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VGroup</span></code>: VMobjects grouping.</p></li>
+</ul>
+<p>There are two ways to add Mobjects to the screen and two ways to remove something from the screen.</p>
+<p>To add something to the screen we can use <code class="docutils literal notranslate"><span class="pre">Scene.add</span></code> or <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> with some creation or modification animation.</p>
+</div>
+<div class="section" id="scene-add">
+<h2><code class="docutils literal notranslate"><span class="pre">Scene.add</span></code><a class="headerlink" href="#scene-add" title="Permalink to this headline">¶</a></h2>
+<p>When we use <code class="docutils literal notranslate"><span class="pre">Scene.add</span></code> it is done instantly, that is, if we do this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Square</span><span class="p">())</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Circle</span><span class="p">())</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>the objects are going to be added without animation, we could even do this to write less code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Square</span><span class="p">(),</span><span class="n">Circle</span><span class="p">(),</span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>If your script doesn’t have any <code class="docutils literal notranslate"><span class="pre">Scene.wait</span></code> or <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> then <strong>you can’t</strong> use <code class="docutils literal notranslate"><span class="pre">-ql</span></code>, <code class="docutils literal notranslate"><span class="pre">-qm</span></code> etc, you must use <code class="docutils literal notranslate"><span class="pre">-s</span></code> or <code class="docutils literal notranslate"><span class="pre">-ps</span></code>, because your script doesn’t have animations. See the second file of the tutorial repo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NoAnimations</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    In this scene there are no animations,</span>
+<span class="sd">    neither Scene.wait(...) nor Scene.play(...)</span>
+<span class="sd">    so it should not be rendered as video,</span>
+<span class="sd">    but can be rendered as image using -s or -ps</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># self.wait() # &lt;---- use a wait to render this as animation.</span>
+</pre></div>
+</div>
+<p style="text-align:center;font-size: 2em; font-weight: bold; text-decoration: underline overline; text-underline-offset: 0.2em;">Quiz</p>
+<p style="text-align:center;">Imagine the result of the following code.</p><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Square</span><span class="p">())</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Circle</span><span class="p">())</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Triangle</span><span class="p">())</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="types-of-animations">
+<h2>Types of animations<a class="headerlink" href="#types-of-animations" title="Permalink to this headline">¶</a></h2>
+<p>There are <strong>two ways</strong> to make animations, one is with <strong>updaters</strong> and the other is using the <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> method. The updaters are more advanced and we will see them later.</p>
+</div>
+<div class="section" id="scene-play">
+<h2><code class="docutils literal notranslate"><span class="pre">Scene.play</span></code><a class="headerlink" href="#scene-play" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> method accepts <strong>two types</strong> of arguments, either <strong>methods of Mobjects as animations</strong> and <strong>class animations</strong>, we will see the methods of Mobjects later after seeing Mobjects properties, the most basic animations are the class animations.</p>
+<p>In summary, the ways to make animations are:</p>
+<ul>
+<li><p>Updaters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Simple updaters</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> updaters</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tt dt\)</span> updaters</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scene.play</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Methods of Mobjects</p></li>
+<li><p>Class animations</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>In this section we will analyze the last one, which is the simplest.</p>
+<div class="section" id="class-animations">
+<h3>Class animations<a class="headerlink" href="#class-animations" title="Permalink to this headline">¶</a></h3>
+<hr/><div class="section" id="types">
+<h4>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h4>
+<p>There are already several predefined class animations, and they are divided into 4 groups.</p>
+<ol class="arabic simple">
+<li><p><span class="underbold">Creation animations</span>: They add an object to the screen.</p></li>
+<li><p><span class="underbold">Transformation animations</span>: They modify the shape or position of an object.</p></li>
+<li><p><span class="underbold">Indication animations</span>: They help to identify an object on the screen, they are actually a fusion of the other 3 animations.</p></li>
+<li><p><span class="underbold">Animations to remove</span>: They remove an object from the screen.</p></li>
+</ol>
+</div>
+<div class="section" id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+<p>Every class animation has the following main properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run_time</span></code> <em>(float)</em>: It is the duration of the animation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rate_func</span></code> <em>(function)</em>: It is the behavior of the animation, most of them are <code class="docutils literal notranslate"><span class="pre">smooth</span></code>, but they can also be:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+<span class="k">def</span> <span class="nf">smooth</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">inflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="o">-</span><span class="n">inflection</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">inflection</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">-</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">error</span><span class="p">),</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rush_into</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">inflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rush_from</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">inflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">slow_into</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">double_smooth</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">smooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">there_and_back</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">inflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="n">new_t</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">new_t</span><span class="p">,</span> <span class="n">inflection</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">there_and_back_with_pause</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pause_ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">pause_ratio</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="n">pause_ratio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">pause_ratio</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">smooth</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">running_start</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Iterable</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">bezier</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">,</span> <span class="n">pull_factor</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">not_quite_there</span><span class="p">(</span>
+    <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="n">smooth</span><span class="p">,</span>
+    <span class="n">proportion</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">proportion</span> <span class="o">*</span> <span class="n">func</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">wiggle</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">wiggles</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">there_and_back</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">wiggles</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">squish_rate_func</span><span class="p">(</span>
+    <span class="n">func</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">],</span>
+    <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span>
+    <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]:</span>  <span class="c1"># what is func return type?</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">a</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">((</span><span class="n">t</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># See all in manim/utils/rate_functions.py</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">remover</span></code> <em>(bool)</em>: It is <code class="docutils literal notranslate"><span class="pre">True</span></code> when the intention of the animation is to remove the Mobject from the screen, some class animations that have this attr as <code class="docutils literal notranslate"><span class="pre">True</span></code> are <code class="docutils literal notranslate"><span class="pre">FadeOut</span></code> and <code class="docutils literal notranslate"><span class="pre">Uncreate</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mobject</span></code> <em>(Mobject)</em>: Some animations only accept VMobjects (like <code class="docutils literal notranslate"><span class="pre">Write</span></code>) or some specific Mobject for that animation, while others accept any Mobject (like <code class="docutils literal notranslate"><span class="pre">FadeIn</span></code>).</p></li>
+</ul>
+<p>There are some rules for using <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code>, one of the most important is that you cannot animate a Mobject twice in the same <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> method.</p>
+<p>In the example below, you couldn’t have more than one uncommented animation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BasicAnimations</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
+            <span class="c1"># FadeIn(text),</span>
+            <span class="c1"># GrowFromCenter(text),</span>
+            <span class="c1"># FadeInFromLarge(text, scale_factor=2), # &lt;- Some animations require more arguments to work.</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span> <span class="c1"># &lt;- It is advisable to always have a wait at the end</span>
+</pre></div>
+</div>
+<p>And in general, it is always advisable to have a <code class="docutils literal notranslate"><span class="pre">Scene.wait</span></code> at the end so that the above animation does not have strange behaviors.</p>
+</div>
+<div class="section" id="multiple-animations-at-the-same-using-scene-play">
+<h4>Multiple animations at the same using Scene.play<a class="headerlink" href="#multiple-animations-at-the-same-using-scene-play" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MultipleAnimationSameTime</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Create</span><span class="p">(</span><span class="n">square</span><span class="p">),</span>
+            <span class="n">FadeIn</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/MultipleAnimationSameTime.mp4" type="video/mp4">
+</video>
+</div>
+<hr/></div>
+<div class="section" id="animations-with-arguments">
+<h4>Animations with arguments<a class="headerlink" href="#animations-with-arguments" title="Permalink to this headline">¶</a></h4>
+<p>Of all animations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeDuration</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Create</span><span class="p">(</span><span class="n">Circle</span><span class="p">()),</span>
+            <span class="n">FadeIn</span><span class="p">(</span><span class="n">Square</span><span class="p">()),</span>
+            <span class="n">run_time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">rate_func</span><span class="o">=</span><span class="n">linear</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/ChangeDuration.mp4" type="video/mp4">
+</video>
+</div>
+<hr/><p>Of each animation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeDurationMultipleAnimations</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span>
+            <span class="n">Create</span><span class="p">(</span>
+                <span class="n">Circle</span><span class="p">(),</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                <span class="n">rate_func</span><span class="o">=</span><span class="n">smooth</span>
+            <span class="p">),</span>
+            <span class="n">FadeIn</span><span class="p">(</span>
+                <span class="n">Square</span><span class="p">(),</span>
+                <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">rate_func</span><span class="o">=</span><span class="n">there_and_back</span>
+            <span class="p">),</span>
+            <span class="n">GrowFromCenter</span><span class="p">(</span>
+                <span class="n">Triangle</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/ChangeDurationMultipleAnimations.mp4" type="video/mp4">
+</video>
+</div>
+<hr/></div>
+<div class="section" id="more-animations">
+<h4>More animations<a class="headerlink" href="#more-animations" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoreAnimations</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Rotate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Indicate</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FocusOn</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ShowCreationThenDestructionAround</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/MoreAnimations.mp4" type="video/mp4">
+</video>
+</div>
+<hr/></div>
+<div class="section" id="where-to-see-all-the-predefined-animations">
+<h4>Where to see all the predefined animations<a class="headerlink" href="#where-to-see-all-the-predefined-animations" title="Permalink to this headline">¶</a></h4>
+<p>Some time ago I made <a class="reference external" href="https://elteoremadebeethoven.github.io/manim_3feb_docs.github.io/html/tree/animation.html#animations">this small documentation</a> of all ManimCairo animations, the use of animations is not the same in ManimCE but you can get an idea of how they work.</p>
+<p>The source code of all class animations are in <code class="docutils literal notranslate"><span class="pre">manim/animations</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="scene-remove">
+<h2><code class="docutils literal notranslate"><span class="pre">Scene.remove</span></code><a class="headerlink" href="#scene-remove" title="Permalink to this headline">¶</a></h2>
+<p>It is the equivalent of <code class="docutils literal notranslate"><span class="pre">Scene.add</span></code>, but instead of adding to the screen, they remove it from the screen, there is no more mystery.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AddAndRemove</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="positions.html" class="btn btn-neutral float-right" title="Positions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cli_options.html" class="btn btn-neutral float-left" title="Basic CLI options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Alexander Vázquez.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Basic CLI options &mdash; ManimCE tutorial by TB  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basic animations" href="basic_animations.html" />
+    <link rel="prev" title="Initial settings" href="initial_steps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ManimCE tutorial by TB
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initial_steps.html">Initial settings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic CLI options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-structure-of-an-animation">Basic structure of an Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cli-options">Cli options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-default-settings">Use default settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#render-all-scenes">Render all scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-resolution">Custom resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-as-gif">Save as gif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#render-last-frame">Render last frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-animation-from">Start animation from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-name">Change name</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_animations.html">Basic animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positions.html">Positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_properties.html">Basic properties (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_assets.html">Import assets (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="groups_and_vgroups.html">Group &amp; VGroup (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tex_and_texts.html">Tex, MathTex &amp; Text (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs_2d.html">2D Graphs (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs_3d.html">3D Graphs (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/basic_updaters.html">Basic updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/alpha_updaters.html">alpha updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/animate_methods.html">Methods as animations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/dt_updaters.html">dt updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/group_animations.html">AnimationGroup, LaggedStart &amp; Successions (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom_mobjects.html">Custom Mobjects (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom_animations.html">Custon animations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/moving_camera_scene.html">Moving Camera Scene (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/zoomed_camera_scene.html">Zoomed Camera Scene (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ManimCE tutorial by TB</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Basic CLI options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/basics/cli_options.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-cli-options">
+<h1>Basic CLI options<a class="headerlink" href="#basic-cli-options" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="underbold">Source code of this section</span>: <a class="reference external" href="https://github.com/Elteoremadebeethoven/ManimCE-tutorial/blob/main/_01_render_settings.py">_01_render_settings.py</a></p>
+</div>
+<div class="section" id="basic-structure-of-an-animation">
+<h2>Basic structure of an Animation<a class="headerlink" href="#basic-structure-of-an-animation" title="Permalink to this headline">¶</a></h2>
+<p>For a script to be renderable it must have the following structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the manim library</span>
+<span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># This is the way to define an Scene</span>
+<span class="k">class</span> <span class="nc">SCENE_NAME</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Here is all the code for your animation.</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cli-options">
+<h2>Cli options<a class="headerlink" href="#cli-options" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                <span class="n">DEFAULTS</span>
+<span class="o">=================================================================================</span>
+<span class="o">-</span><span class="n">p</span>          <span class="n">PREVIEW</span>                       <span class="n">Open</span> <span class="n">the</span> <span class="n">scene</span> <span class="k">with</span> <span class="n">your</span> <span class="n">media</span> <span class="n">player</span>
+
+<span class="o">-</span><span class="n">a</span>          <span class="n">RENDER</span> <span class="n">ALL</span> <span class="n">SCENES</span>
+            <span class="n">IN</span> <span class="n">THE</span> <span class="n">FILE</span>
+            <span class="p">(</span><span class="n">DON</span><span class="s1">&#39;T USE IT WITH -p FLAG)</span>
+
+<span class="o">-</span><span class="n">ql</span>         <span class="n">LOW</span> <span class="n">QUALITY</span>         <span class="mi">480</span><span class="n">p</span>    <span class="mi">15</span> <span class="n">fps</span>
+<span class="o">-</span><span class="n">qm</span>         <span class="n">MEDIUM</span> <span class="n">QUALITY</span>      <span class="mi">720</span><span class="n">p</span>    <span class="mi">30</span> <span class="n">fps</span>
+<span class="o">-</span><span class="n">qh</span>         <span class="n">HIGHT</span> <span class="n">QUALITY</span>       <span class="mi">1080</span><span class="n">p</span>   <span class="mi">60</span> <span class="n">fps</span>
+<span class="o">-</span><span class="n">qp</span>         <span class="n">PRODUCTION</span> <span class="n">QUALITY</span>  <span class="mi">1440</span><span class="n">p</span>   <span class="mi">60</span> <span class="n">fps</span>
+<span class="o">-</span><span class="n">qk</span>         <span class="mi">4</span><span class="n">K</span>                  <span class="mi">2160</span><span class="n">p</span>   <span class="mi">60</span> <span class="n">fps</span>
+<span class="o">-</span><span class="n">s</span>          <span class="n">RENDER</span> <span class="n">PNG</span> <span class="n">OF</span> <span class="n">THE</span>
+            <span class="n">LAST</span> <span class="n">FRAME</span>
+
+<span class="n">Shorts</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">pql</span>    <span class="n">PREVIEW</span> <span class="n">IN</span> <span class="n">LOW</span> <span class="n">QUALITY</span>
+    <span class="o">-</span><span class="n">pqm</span>    <span class="n">PREVIEW</span> <span class="n">IN</span> <span class="n">MEDIUM</span> <span class="n">QUALITY</span>
+    <span class="o">-</span><span class="n">pqh</span>    <span class="n">PREVIEW</span> <span class="n">IN</span> <span class="n">HIGHT</span> <span class="n">QUALITY</span>
+    <span class="o">-</span><span class="n">pqp</span>    <span class="n">PREVIEW</span> <span class="n">IN</span> <span class="n">PRODUCTION</span> <span class="n">QUALITY</span>
+    <span class="o">-</span><span class="n">pqk</span>    <span class="n">PREVIEW</span> <span class="n">IN</span> <span class="mi">4</span><span class="n">K</span> <span class="n">QUALITY</span>
+    <span class="o">-</span><span class="n">ps</span>     <span class="n">RENDER</span> <span class="n">LAST</span> <span class="n">FRAME</span> <span class="n">AS</span> <span class="n">PNG</span>
+
+                                <span class="n">CUSTOM</span>
+<span class="o">=================================================================================</span>
+<span class="o">-</span><span class="n">r</span> <span class="n">H</span><span class="p">,</span><span class="n">W</span>      <span class="n">RENDER</span> <span class="n">WITH</span> <span class="n">CUSTOM</span>
+            <span class="n">DIMENSIONS</span>
+
+            <span class="n">Example</span><span class="p">:</span> <span class="o">-</span><span class="n">r</span> <span class="mi">500</span><span class="p">,</span><span class="mi">500</span>
+
+<span class="o">-</span><span class="n">o</span> <span class="n">FILE_NAME</span>
+
+<span class="n">CLICK</span> <span class="p">(</span><span class="n">Not</span> <span class="nb">all</span> <span class="n">properties</span> <span class="n">works</span> <span class="n">fine</span> <span class="n">yet</span><span class="p">)</span>
+<span class="o">-----------------------------------</span>
+<span class="p">[</span><span class="n">CLI</span><span class="p">]</span>
+<span class="c1"># my config file</span>
+<span class="c1">#save_as_gif = True</span>
+<span class="c1">#background_color = WHITE</span>
+<span class="o">-----------------------------------</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-default-settings">
+<h2>Use default settings<a class="headerlink" href="#use-default-settings" title="Permalink to this headline">¶</a></h2>
+<p>In the first file <code class="docutils literal notranslate"><span class="pre">_01_render_settings.py</span></code> you will find this code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Scene1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;SCENE 1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Scene2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;SCENE 2&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Scene3</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;SCENE 3&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Each class that inherits from Scene is a separate animation. You can render the first one at 480p using:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manim tutorial/_01_render_settings.py Scene1 -p -ql
+</pre></div>
+</div>
+<p>You will see something like this in the terminal:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Manim Community v0.5.0
+<span class="o">[</span><span class="m">04</span>/23/21 <span class="m">23</span>:44:37<span class="o">]</span> INFO     Animation <span class="m">0</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/480p15/partial_</span>
+<span class="s1">                            movie_files/Scene1/3163782</span>
+<span class="s1">                            288_3424579518_1323973724.</span>
+<span class="s1">                            mp4&#39;</span><span class="o">}</span>
+                    INFO     Animation <span class="m">1</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/480p15/partial_</span>
+<span class="s1">                            movie_files/Scene1/1495979</span>
+<span class="s1">                            052_1438405273_696553468.m</span>
+<span class="s1">                            p4&#39;</span><span class="o">}</span>
+                    INFO                                scene_file_writer.py:579
+<span class="hll">                            File ready at /Users/zavde
+</span><span class="hll">                            n/Downloads/ManimCE/media/
+</span><span class="hll">                            videos/_01_render_settings
+</span><span class="hll">                            /480p15/Scene1.mp4
+</span>
+                    INFO     Rendered Scene1                        scene.py:190
+                            Played <span class="m">2</span> animations
+                    INFO     Previewed File at: /Users/zavden/Dow file_ops.py:99
+                            nloads/ManimCE/media/videos/_01_rend
+                            er_settings/480p15/Scene1.mp4
+</pre></div>
+</div>
+<p>If you have installed Manim correctly, the animation will have automatically opened with your default player.
+In the highlighted lines you will see the full location of the file in mp4.</p>
+<p>In general, to render any scene the command structure is</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manim &lt;scrip.py&gt; &lt;SCENE-NAME&gt; &lt;FLAGS&gt;
+</pre></div>
+</div>
+<p>In our case, we can join the <code class="docutils literal notranslate"><span class="pre">-p</span></code> and <code class="docutils literal notranslate"><span class="pre">-ql</span></code> flags to have the same result,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manim tutorial/_01_render_settings.py Scene1 -pql
+</pre></div>
+</div>
+</div>
+<div class="section" id="render-all-scenes">
+<h2>Render all scenes<a class="headerlink" href="#render-all-scenes" title="Permalink to this headline">¶</a></h2>
+<p>To render all scenes in a script use <code class="docutils literal notranslate"><span class="pre">-a</span></code>.</p>
+<p>In our case, if we want all the scenes to be rendered at low resolution we would use <code class="docutils literal notranslate"><span class="pre">-aql</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">aql</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t use <code class="docutils literal notranslate"><span class="pre">-paql</span></code> because if you have a lot of scenes they will open automatically when they finish rendering.</p>
+</div>
+<p>If we wanted them to be rendered at medium resolution we would use <code class="docutils literal notranslate"><span class="pre">-aqm</span></code>.</p>
+<p>You can see all the predefined settings above.</p>
+</div>
+<div class="section" id="custom-resolution">
+<h2>Custom resolution<a class="headerlink" href="#custom-resolution" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene1</span> <span class="o">-</span><span class="n">pql</span> <span class="o">-</span><span class="n">r</span> <span class="mi">900</span><span class="p">,</span><span class="mi">600</span>
+</pre></div>
+</div>
+<p>Where 900 is the pixel height and 600 is the pixel width.</p>
+<p>It doesn’t matter if you use <code class="docutils literal notranslate"><span class="pre">-ql</span></code>, <code class="docutils literal notranslate"><span class="pre">-qm</span></code>, <code class="docutils literal notranslate"><span class="pre">-qh</span></code>, or another resolution flag, the <code class="docutils literal notranslate"><span class="pre">-r</span></code> will overwrite the dimensions, if you change the resolution flags you would only change the <strong>fps</strong>.</p>
+</div>
+<div class="section" id="save-as-gif">
+<h2>Save as gif<a class="headerlink" href="#save-as-gif" title="Permalink to this headline">¶</a></h2>
+<p>Render animation as GIF using low resolution.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene1</span> <span class="o">-</span><span class="n">ql</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+<p>Render animation as GIF using 900x600 resolution at 30 fps with preview:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene1</span> <span class="o">-</span><span class="n">pqm</span> <span class="o">-</span><span class="n">r</span> <span class="mi">900</span><span class="p">,</span><span class="mi">600</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="render-last-frame">
+<h2>Render last frame<a class="headerlink" href="#render-last-frame" title="Permalink to this headline">¶</a></h2>
+<p>Render last frame at 1080p with preview:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene1</span> <span class="o">-</span><span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-animation-from">
+<h2>Start animation from<a class="headerlink" href="#start-animation-from" title="Permalink to this headline">¶</a></h2>
+<p>Copy this animation in your file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Scene4</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="n">triangle</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">()</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start animations -------------&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Add text&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wait 1 second&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Create square&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wait 2 seconds&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Create circle&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">circle</span><span class="p">))</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wait 1.5 seconds&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Create triangle&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">triangle</span><span class="p">))</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Last wait&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If we render this video with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>manim tutorial/_01_render_settings.py Scene4 -pqm
+</pre></div>
+</div>
+<p>You will see this output:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Manim Community v0.5.0
+Start animations -------------
+Add text
+Wait <span class="m">1</span> second
+<span class="o">[</span><span class="m">04</span>/24/21 <span class="m">00</span>:40:26<span class="o">]</span> INFO     Animation <span class="m">0</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/6552404</span>
+<span class="s1">                            68_1438405273_192487528.mp</span>
+<span class="s1">                            4&#39;</span><span class="o">}</span>
+Create square
+                    INFO     Animation <span class="m">1</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/1201832</span>
+<span class="s1">                            484_1768192346_2074958280.</span>
+<span class="s1">                            mp4&#39;</span><span class="o">}</span>
+Wait <span class="m">2</span> seconds
+<span class="o">[</span><span class="m">04</span>/24/21 <span class="m">00</span>:40:27<span class="o">]</span> INFO     Animation <span class="m">2</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/1201832</span>
+<span class="s1">                            484_2616472470_324434285.m</span>
+<span class="s1">                            p4&#39;</span><span class="o">}</span>
+Create circle
+                    INFO     Animation <span class="m">3</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/1201832</span>
+<span class="s1">                            484_355446327_3071649543.m</span>
+<span class="s1">                            p4&#39;</span><span class="o">}</span>
+Wait <span class="m">1</span>.5 seconds
+                    INFO     Animation <span class="m">4</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/1201832</span>
+<span class="s1">                            484_2941483014_474227006.m</span>
+<span class="s1">                            p4&#39;</span><span class="o">}</span>
+Create triangle
+<span class="o">[</span><span class="m">04</span>/24/21 <span class="m">00</span>:40:28<span class="o">]</span> INFO     Animation <span class="m">5</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/1201832</span>
+<span class="s1">                            484_3040797843_2557678564.</span>
+<span class="s1">                            mp4&#39;</span><span class="o">}</span>
+Last <span class="nb">wait</span>
+                    INFO     Animation <span class="m">6</span> : Partial      scene_file_writer.py:395
+                            movie file written <span class="k">in</span> <span class="o">{</span><span class="s1">&#39;/U</span>
+<span class="s1">                            sers/zavden/Downloads/Mani</span>
+<span class="s1">                            mCE/media/videos/_01_rende</span>
+<span class="s1">                            r_settings/720p30/partial_</span>
+<span class="s1">                            movie_files/Scene4/1201832</span>
+<span class="s1">                            484_1438405273_4180111533.</span>
+<span class="s1">                            mp4&#39;</span><span class="o">}</span>
+                    INFO                                scene_file_writer.py:579
+                            File ready at /Users/zavde
+                            n/Downloads/ManimCE/media/
+                            videos/_01_render_settings
+                            /720p30/Scene4.mp4
+
+                    INFO     Rendered Scene4                        scene.py:190
+                            Played <span class="m">7</span> animations
+                    INFO     Previewed File at: /Users/zavden/Dow file_ops.py:99
+                            nloads/ManimCE/media/videos/_01_rend
+                            er_settings/720p30/Scene4.mp4
+</pre></div>
+</div>
+<p>If we render this animation this time the output will be different:</p>
+<div class="highlight-sh notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>Manim Community v0.5.0
+Start animations -------------
+Add text
+Wait <span class="m">1</span> second
+<span class="hll"><span class="o">[</span><span class="m">04</span>/24/21 <span class="m">00</span>:41:42<span class="o">]</span> INFO     Animation <span class="m">0</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 655240468_1438405
+                            273_192487528<span class="o">)</span>
+Create square
+<span class="hll">                    INFO     Animation <span class="m">1</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 1201832484_176819
+                            2346_2074958280<span class="o">)</span>
+Wait <span class="m">2</span> seconds
+<span class="hll">                    INFO     Animation <span class="m">2</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 1201832484_261647
+                            2470_324434285<span class="o">)</span>
+Create circle
+<span class="hll">                    INFO     Animation <span class="m">3</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 1201832484_355446
+                            327_3071649543<span class="o">)</span>
+Wait <span class="m">1</span>.5 seconds
+<span class="hll">                    INFO     Animation <span class="m">4</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 1201832484_294148
+                            3014_474227006<span class="o">)</span>
+Create triangle
+<span class="hll">                    INFO     Animation <span class="m">5</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 1201832484_304079
+                            7843_2557678564<span class="o">)</span>
+Last <span class="nb">wait</span>
+<span class="hll">                    INFO     Animation <span class="m">6</span> : Using cached     cairo_renderer.py:99
+</span>                            data <span class="o">(</span><span class="nb">hash</span> : 1201832484_143840
+                            5273_4180111533<span class="o">)</span>
+                    INFO                                scene_file_writer.py:579
+                            File ready at /Users/zavde
+                            n/Downloads/ManimCE/media/
+                            videos/_01_render_settings
+                            /720p30/Scene4.mp4
+
+                    INFO     Rendered Scene4                        scene.py:190
+                            Played <span class="m">7</span> animations
+                    INFO     Previewed File at: /Users/zavden/Dow file_ops.py:99
+                            nloads/ManimCE/media/videos/_01_rend
+                            er_settings/720p30/Scene4.mp4
+</pre></div>
+</td></tr></table></div>
+<p>Explanation: Manim renders each animation (each self.play) separately, and in the end it concatenates all the videos into one.</p>
+<p>If the animations are simple, the compiler saves a hash that identifies each animation of a script, and if it does not detect changes, then it will not render it, it will simply copy it, so the rendering will be faster.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the animations are relatively complex, this won’t work (at least, for now).</p>
+</div>
+<p>In the highlighted lines you will see the number of each animation, in this example there are 7 animations (counting from 0).</p>
+<p>This is because pauses are also considered animations, that is, <code class="docutils literal notranslate"><span class="pre">Scene.wait</span></code> and <code class="docutils literal notranslate"><span class="pre">Scene.play</span></code> are interpreted as animations. If you don’t understand why <code class="docutils literal notranslate"><span class="pre">Scene.wait</span></code> is considered an animation we will explain it in the <strong>updaters</strong> section with <em>dt</em>.</p>
+<p>If we wanted to start the animation from the creation of the circle we would use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene4</span> <span class="o">-</span><span class="n">pqm</span> <span class="o">-</span><span class="n">n</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/Sf3.mp4" type="video/mp4">
+</video>
+</div>
+<hr/><p>If we wanted to start the animation from the creation of the square and ending in the creation of the circle we would use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene4</span> <span class="o">-</span><span class="n">pqm</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/S1t3.mp4" type="video/mp4">
+</video>
+</div>
+<hr/></div>
+<div class="section" id="change-name">
+<h2>Change name<a class="headerlink" href="#change-name" title="Permalink to this headline">¶</a></h2>
+<p>The animations will be rendered with the name of the class you defined, that is, if we render <code class="docutils literal notranslate"><span class="pre">Scene1</span></code> the mp4 file will be called the same, if we want it to be called in another way we simply use <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">Other_name</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">manim</span> <span class="n">tutorial</span><span class="o">/</span><span class="n">_01_render_settings</span><span class="o">.</span><span class="n">py</span> <span class="n">Scene1</span> <span class="o">-</span><span class="n">pqm</span> <span class="o">-</span><span class="n">o</span> <span class="n">First_scene</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="basic_animations.html" class="btn btn-neutral float-right" title="Basic animations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="initial_steps.html" class="btn btn-neutral float-left" title="Initial settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Alexander Vázquez.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

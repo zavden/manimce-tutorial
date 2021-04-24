@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Positions &mdash; ManimCE tutorial by TB  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basic properties (TODO)" href="basic_properties.html" />
+    <link rel="prev" title="Basic animations" href="basic_animations.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ManimCE tutorial by TB
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initial_steps.html">Initial settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli_options.html">Basic CLI options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_animations.html">Basic animations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Positions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-to-edge-mobject-to-corner"><code class="docutils literal notranslate"><span class="pre">Mobject.to_edge</span> <span class="pre">&amp;</span> <span class="pre">Mobject.to_corner</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-shift"><code class="docutils literal notranslate"><span class="pre">Mobject.shift</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-move-to"><code class="docutils literal notranslate"><span class="pre">Mobject.move_to</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-next-to"><code class="docutils literal notranslate"><span class="pre">Mobject.next_to</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-get"><code class="docutils literal notranslate"><span class="pre">Mobject.get_</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-align-to"><code class="docutils literal notranslate"><span class="pre">Mobject.align_to</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobject-rotate"><code class="docutils literal notranslate"><span class="pre">Mobject.rotate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_properties.html">Basic properties (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_assets.html">Import assets (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="groups_and_vgroups.html">Group &amp; VGroup (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tex_and_texts.html">Tex, MathTex &amp; Text (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations.html">Transformations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs_2d.html">2D Graphs (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphs_3d.html">3D Graphs (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/basic_updaters.html">Basic updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/alpha_updaters.html">alpha updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/animate_methods.html">Methods as animations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/dt_updaters.html">dt updaters (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/group_animations.html">AnimationGroup, LaggedStart &amp; Successions (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom_mobjects.html">Custom Mobjects (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom_animations.html">Custon animations (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/moving_camera_scene.html">Moving Camera Scene (TODO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/zoomed_camera_scene.html">Zoomed Camera Scene (TODO)</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ManimCE tutorial by TB</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Positions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/basics/positions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="positions">
+<h1>Positions<a class="headerlink" href="#positions" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="underbold">Source code of this section</span>: <a class="reference external" href="https://github.com/Elteoremadebeethoven/ManimCE-tutorial/blob/main/_03_basic_positions.py">_03_basic_positions.py</a></p>
+</div>
+<p>For this section we will be using the object called ScreenGrid, a Mobject that I created to help us visualize the coordinates of the screen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CoordScreen</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">screen_grid</span> <span class="o">=</span> <span class="n">ScreenGrid</span><span class="p">()</span>
+        <span class="n">dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">screen_grid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">dot</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/CoordScreen.png" src="../_images/CoordScreen.png" />
+<p>There are several constants that help to locate objects on the screen, and we can specify any coordinate through them using linear combinations.</p>
+<p>From <code class="docutils literal notranslate"><span class="pre">manim/constants.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geometry: directions</span>
+<span class="n">ORIGIN</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;The center of the coordinate system.&quot;&quot;&quot;</span>
+
+<span class="n">UP</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;One unit step in the positive Y direction.&quot;&quot;&quot;</span>
+
+<span class="n">DOWN</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;One unit step in the negative Y direction.&quot;&quot;&quot;</span>
+
+<span class="n">RIGHT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;One unit step in the positive X direction.&quot;&quot;&quot;</span>
+
+<span class="n">LEFT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;One unit step in the negative X direction.&quot;&quot;&quot;</span>
+
+<span class="n">IN</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;One unit step in the negative Z direction.&quot;&quot;&quot;</span>
+
+<span class="n">OUT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;One unit step in the positive Z direction.&quot;&quot;&quot;</span>
+
+<span class="c1"># Geometry: axes</span>
+<span class="n">X_AXIS</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">Y_AXIS</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">Z_AXIS</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+<span class="c1"># Geometry: useful abbreviations for diagonals</span>
+<span class="n">UL</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">UP</span> <span class="o">+</span> <span class="n">LEFT</span>
+<span class="sd">&quot;&quot;&quot;One step up plus one step left.&quot;&quot;&quot;</span>
+
+<span class="n">UR</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">UP</span> <span class="o">+</span> <span class="n">RIGHT</span>
+<span class="sd">&quot;&quot;&quot;One step up plus one step right.&quot;&quot;&quot;</span>
+
+<span class="n">DL</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">DOWN</span> <span class="o">+</span> <span class="n">LEFT</span>
+<span class="sd">&quot;&quot;&quot;One step down plus one step left.&quot;&quot;&quot;</span>
+
+<span class="n">DR</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">DOWN</span> <span class="o">+</span> <span class="n">RIGHT</span>
+<span class="sd">&quot;&quot;&quot;One step down plus one step right.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BasicPositions</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dot_center</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">WHITE</span><span class="p">)</span>      <span class="c1"># ORIGIN: [0,0,0] by default</span>
+        <span class="n">dot_left</span>  <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">LEFT</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">RED</span><span class="p">)</span>    <span class="c1"># [-1,0,0]</span>
+        <span class="n">dot_right</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>  <span class="c1"># [1,0,0]</span>
+        <span class="n">dot_up</span>    <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">UP</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">GREEN</span><span class="p">)</span>    <span class="c1"># [0,1,0]</span>
+        <span class="n">dot_down</span>  <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">DOWN</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">ORANGE</span><span class="p">)</span> <span class="c1"># [0,-1,0]</span>
+        <span class="n">dot_2_3</span>   <span class="o">=</span> <span class="n">Dot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="n">TEAL</span><span class="p">)</span><span class="c1"># [2,3,0]</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;frame_width: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;frame_height: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">frame_height</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+            <span class="c1"># ScreenGrid(), # &lt;- uncomment this</span>
+            <span class="n">dot_center</span><span class="p">,</span>
+            <span class="n">dot_left</span><span class="p">,</span>
+            <span class="n">dot_right</span><span class="p">,</span>
+            <span class="n">dot_up</span><span class="p">,</span>
+            <span class="n">dot_down</span><span class="p">,</span>
+            <span class="n">dot_2_3</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/BasicPositions.png" src="../_images/BasicPositions.png" />
+<div class="section" id="mobject-to-edge-mobject-to-corner">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.to_edge</span> <span class="pre">&amp;</span> <span class="pre">Mobject.to_corner</span></code><a class="headerlink" href="#mobject-to-edge-mobject-to-corner" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EdgesAndCorners</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+        <span class="n">square</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">UR</span><span class="p">)</span>               <span class="c1"># UP + RIGHT</span>
+
+        <span class="n">triangle</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">()</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>    <span class="c1"># DOWN + LEFT</span>
+
+        <span class="n">dot_up</span>   <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">dot_up</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+
+        <span class="n">dot_down</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="n">dot_down</span><span class="o">.</span><span class="n">to_edge</span><span class="p">(</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+            <span class="n">square</span><span class="p">,</span>
+            <span class="n">triangle</span><span class="p">,</span>
+            <span class="n">dot_up</span><span class="p">,</span>
+            <span class="n">dot_down</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/EdgesAndCorners.png" src="../_images/EdgesAndCorners.png" />
+</div>
+<div class="section" id="mobject-shift">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.shift</span></code><a class="headerlink" href="#mobject-shift" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShiftMethod</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The shift method moves the object</span>
+<span class="sd">    based on the current position of</span>
+<span class="sd">    the object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/ShiftMethod.mp4" type="video/mp4">
+</video>
+</div>
+<hr/></div>
+<div class="section" id="mobject-move-to">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.move_to</span></code><a class="headerlink" href="#mobject-move-to" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveToMethod1</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The move_to method moves the object</span>
+<span class="sd">    taking as reference the origin or</span>
+<span class="sd">    some particular point</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="c1"># In this way, it takes the center of the screen as a reference</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/MoveToMethod1.mp4" type="video/mp4">
+</video>
+</div>
+<hr/><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoveToMethod2</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
+        <span class="n">dot_1</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="n">ORANGE</span><span class="p">)</span>
+        <span class="n">dot_2</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">circle</span><span class="p">,</span><span class="n">dot_1</span><span class="p">,</span><span class="n">dot_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">dot_1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">dot_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="n">In</span> <span class="n">this</span> <span class="n">way</span><span class="p">,</span> <span class="n">it</span> <span class="n">takes</span> <span class="n">a</span> <span class="n">Mobject</span> <span class="p">(</span><span class="n">dot_2</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">reference</span>
+        <span class="n">circle</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">dot_2</span><span class="o">.</span><span class="n">get_center</span><span class="p">()</span><span class="o">+</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+<video allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
+    <source src="../_static/MoveToMethod2.mp4" type="video/mp4">
+</video>
+</div>
+<hr/></div>
+<div class="section" id="mobject-next-to">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.next_to</span></code><a class="headerlink" href="#mobject-next-to" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NextTo</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    next_to references the edges of an</span>
+<span class="sd">    object to locate another object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+
+        <span class="n">left_dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">right_dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">down_dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">DOWN</span><span class="p">,</span><span class="n">buff</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">left_dot</span><span class="p">,</span> <span class="n">right_dot</span><span class="p">,</span><span class="n">down_dot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/NextTo.png" src="../_images/NextTo.png" />
+</div>
+<div class="section" id="mobject-get">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.get_</span></code><a class="headerlink" href="#mobject-get" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BordersAndCorners</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">get_corner</span><span class="p">(</span><span class="n">UL</span><span class="p">))</span>
+        <span class="n">d2</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">get_bottom</span><span class="p">())</span>
+        <span class="n">d3</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">get_top</span><span class="p">())</span>
+        <span class="n">d4</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">get_left</span><span class="p">())</span>
+        <span class="n">d5</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">get_right</span><span class="p">())</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">d3</span><span class="p">,</span><span class="n">d4</span><span class="p">,</span><span class="n">d5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/BordersAndCorners.png" src="../_images/BordersAndCorners.png" />
+<p>In addition to these methods there are also these others:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Mobject.get_x()</span></code> <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Mobject.get_center()[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mobject.get_y()</span></code> <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Mobject.get_center()[1]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mobject.get_z()</span></code> <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Mobject.get_center()[2]</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="mobject-align-to">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.align_to</span></code><a class="headerlink" href="#mobject-align-to" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Align</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">RED</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+
+        <span class="n">a</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="n">UR</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/Align.png" src="../_images/Align.png" />
+</div>
+<div class="section" id="mobject-rotate">
+<h2><code class="docutils literal notranslate"><span class="pre">Mobject.rotate</span></code><a class="headerlink" href="#mobject-rotate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rotations</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">LEFT</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">DEGREES</span><span class="p">)</span> <span class="c1">#or .rotate(PI/6)</span>
+
+        <span class="n">dot</span> <span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">about_point</span><span class="o">=</span><span class="n">dot</span><span class="o">.</span><span class="n">get_center</span><span class="p">())</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">dot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/Rotations.png" src="../_images/Rotations.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="basic_properties.html" class="btn btn-neutral float-right" title="Basic properties (TODO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basic_animations.html" class="btn btn-neutral float-left" title="Basic animations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Alexander Vázquez.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
