@@ -336,7 +336,6 @@ You will see this output:
 If we render this animation this time the output will be different:
 
 .. code-block:: sh
-    :linenos:
     :emphasize-lines: 5,9,13,17,21,25,29
 
     Manim Community v0.5.0
